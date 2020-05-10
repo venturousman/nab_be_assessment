@@ -1,0 +1,24 @@
+{
+  "name": "nab_be_assessment",
+  "version": "1.0.0",
+  "description": "Backend Assessment For Experienced NodeJS Engineer V1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venturousman/nab_be_assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venturousman/nab_be_assessment/issues"
+  },
+  "homepage": "https://github.com/venturousman/nab_be_assessment#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
