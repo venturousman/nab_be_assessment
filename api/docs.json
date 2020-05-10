@@ -1,10 +1,10 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "User API",
-    "description": "This is a sample User API created with Express.js. You can find more about it [here](https://github.com/kasramp/sample-rest-with-expressjs).",
+    "title": "Product Catalog API",
+    "description": "This is a Product Catalog API created with Express.js. You can find more about it [here](https://github.com/venturousman/nab_be_assessment).",
     "contact": {
-      "email": "kasra@madadipouya.com"
+      "email": "nguyenhoangtin291@gmail.com"
     },
     "license": {
       "name": "MIT",
@@ -14,26 +14,25 @@
   },
   "tags": [
     {
-      "name": "user",
-      "description": "Operations about user"
+      "name": "product",
+      "description": "Operations about product"
     }
   ],
   "paths": {
-    "/api/v1/users": {
+    "/products": {
       "get": {
         "tags": [
-          "user"
+          "product"
         ],
-        "summary": "Get list of users",
-        "operationId": "getUsers",
+        "summary": "Get list of products",
+        "operationId": "findAll",
         "responses": {
           "200": {
             "description": "Successful operation",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User",
-                  "type": "string"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -42,16 +41,16 @@
       },
       "post": {
         "tags": [
-          "user"
+          "product"
         ],
-        "summary": "Create a user",
-        "operationId": "createUser",
+        "summary": "Create a product",
+        "operationId": "create",
         "requestBody": {
-          "description": "Created user object",
+          "description": "Created product object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserDto"
+                "$ref": "#/components/schemas/Product"
               }
             }
           },
@@ -59,11 +58,11 @@
         },
         "responses": {
           "201": {
-            "description": "User created successfully",
+            "description": "Product created successfully",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -81,21 +80,21 @@
         }
       }
     },
-    "/api/v1/users/{id}": {
+    "/products/{id}": {
       "get": {
         "tags": [
-          "user"
+          "product"
         ],
-        "summary": "Get a user by id",
-        "operationId": "getUserById",
+        "summary": "Get a product by id",
+        "operationId": "findOne",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of a user",
+            "description": "The id of a product",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "guid"
             }
           }
         ],
@@ -105,7 +104,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -121,7 +120,7 @@
             }
           },
           "404": {
-            "description": "User not found",
+            "description": "Product not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -134,27 +133,27 @@
       },
       "put": {
         "tags": [
-          "user"
+          "product"
         ],
-        "summary": "Update a user",
-        "operationId": "updateUser",
+        "summary": "Update a product",
+        "operationId": "update",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "id of a user to update",
+            "description": "id of a product to update",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "guid"
             }
           }
         ],
         "requestBody": {
-          "description": "Updated user object",
+          "description": "Updated product object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserDto"
+                "$ref": "#/components/schemas/Product"
               }
             }
           },
@@ -166,7 +165,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -182,7 +181,7 @@
             }
           },
           "404": {
-            "description": "User not found",
+            "description": "Product not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -195,18 +194,18 @@
       },
       "delete": {
         "tags": [
-          "user"
+          "product"
         ],
-        "summary": "Delete a user",
-        "operationId": "deleteUserById",
+        "summary": "Delete a product",
+        "operationId": "delete",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of user to be deleted",
+            "description": "The id of product to be deleted",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "guid"
             }
           }
         ],
@@ -230,16 +229,16 @@
   },
   "components": {
     "schemas": {
-      "UserDto": {
+      "Product": {
         "type": "object",
         "properties": {
-          "firstName": {
+          "id": {
             "type": "string"
           },
-          "lastName": {
+          "name": {
             "type": "string"
           },
-          "age": {
+          "price": {
             "type": "integer",
             "format": "int64"
           }
