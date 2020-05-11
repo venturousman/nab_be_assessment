@@ -211,7 +211,7 @@
         ],
         "responses": {
           "204": {
-            "description": "User deleted successfully"
+            "description": "Product deleted successfully"
           },
           "400": {
             "description": "Invalid id supplied",
