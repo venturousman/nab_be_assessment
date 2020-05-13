@@ -15,6 +15,8 @@ describe('Try to test the Product service', function () {
         axios.get('http://localhost:3000/products')
             .then(function (response) {
                 // handle success
+                expect(response.status).to.equal(200);
+                expect(response.data).to.be.an('array');
                 expect(response.data).to.deep.equal(products);
             })
             .catch(function (error) {

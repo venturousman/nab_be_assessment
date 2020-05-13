@@ -3,7 +3,19 @@ NAB Backend Assessment For Experienced NodeJS Engineer V1
 
 **Code structure:**
 - api folder: contains files that will support the API
+- api/test folder: contains test files
 - services folder: is for the logic to connect to a third-party API or our other microservices (auth, order, ...)
+
+**Middleware modules**
+```
+"axios": Promise based HTTP client for the Browser and Node.js
+"body-parser": Parse incoming request bodies in a middleware before your handlers, available under the req.body property
+"express": Fast, unopinionated, minimalist web framework for Node.js
+"mocha": Simple, flexible, fun JavaScript test framework for Node.js & the Browser
+"swagger-ui-express": This module allows you to serve auto-generated swagger-ui generated API docs from express, based on a swagger.json file.
+"uuid": For the creation of RFC4122 UUIDs
+"chai": An assertion library
+```
 
 **All the required steps in order to get the applications run on local computer**
 ```
