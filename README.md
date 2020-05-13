@@ -1,7 +1,7 @@
-# nab_be_assessment
+# NAB Backend Assessment
 NAB Backend Assessment For Experienced NodeJS Engineer V1
 
-**code structure:**
+**Code structure:**
 - api folder: contains files that will support the API
 - services folder: is for the logic to connect to a third-party API or our other microservices (auth, order, ...)
 
@@ -9,6 +9,11 @@ NAB Backend Assessment For Experienced NodeJS Engineer V1
 ```
 npm install
 npm start
+```
+
+**Test the APIs**
+```
+npm test
 ```
 
 **CURL commands to verify the APIs**
