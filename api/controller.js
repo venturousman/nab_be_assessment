@@ -24,10 +24,13 @@ function dynamicSort(property, order) {
 
 const controller = {
     findAll: function (req, res) {
-        const { query: { pageNumber, pageSize, sortBy, orderBy, name } } = req;
+        const { query: { pageNumber, pageSize, sortBy, orderBy, name, color } } = req;
         let items = products.filter(x => !x.isDeleted);
         if (name) {
             items = items.filter(x => x.name === name);
+        }
+        if (color) {
+            items = items.filter(x => x.color === color);
         }
         if (sortBy && orderBy) {
             // sortBy is field name
