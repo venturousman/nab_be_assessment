@@ -7,7 +7,6 @@ var auth = {
     login: function (req, res, next) {
         // TBD
         // call the auth service API to authenticate and get back token
-        // https.post('https://authentication-service')
         const info = {
             username: 'user1@email.com',
             password: 'some_hashed_password'

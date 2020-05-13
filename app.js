@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 routes(app);
 
 // === listen at the port
-app.listen(port, function () {
+const server = app.listen(port, function () {
     console.log('Server started on port: ' + port);
 });
+
+module.exports = server;
